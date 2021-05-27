@@ -15,4 +15,7 @@ export class SearchBarComponent implements OnInit {
   }
 
 
+  onFormSubmit(): void {
+    console.log(this.term)
+  }
 }

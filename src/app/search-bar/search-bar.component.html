@@ -1,1 +1,3 @@
-<input (input)="term = ($any($event.target).value)" />
+<form (submit)="onFormSubmit()">
+    <input (input)="term = ($any($event.target).value)" />
+</form>
