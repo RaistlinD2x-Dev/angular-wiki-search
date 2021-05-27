@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search-bar',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
+  @Output() submitted = new EventEmitter<string>();
   term = '';
 
   constructor() { }
@@ -17,6 +18,6 @@ export class SearchBarComponent implements OnInit {
 
   onFormSubmit(event: any): void {
     event.preventDefault();
-    console.log(this.term)
+    this.submitted.emit(this.term)
   }
 }
